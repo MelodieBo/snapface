@@ -1,0 +1,46 @@
+@import "~src/app/variables"; 
+
+.landing-block {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.landing-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  color: #fff;
+}
+
+h1::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: $button;
+  z-index: -1;
+  transition: transform .3s ease;
+}
+
+h1 {
+  position: relative;
+  font-size: 3rem;
+  color: darken($bg-body, 3%);
+  cursor: pointer;
+}

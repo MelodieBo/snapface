@@ -1,0 +1,23 @@
+<div class="card" [ngClass]="{snapped: buttonText === 'Oops unSnap !'}">
+    <header class="card__header">
+        <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" class="card__header--thumb">
+    </header>
+    <section class="card__body">
+        <h5 class="card__body--category">{{ faceSnap.categorie }}</h5>
+        <h1 class="card__body--title">{{ faceSnap.title | uppercase }}</h1>
+        <h2 class="card__body--subtitle">{{ faceSnap.subtitle }}</h2>
+        <p class="card__body--description">{{ faceSnap.description }}</p>
+        <!--<p>{{ 0.473 | percent }}</p>-->
+        <div class="card__footer">
+            <span class="icon icon--time">Mis en ligne le {{ faceSnap.createdDate | date: 'medium'}}</span>
+            <span *ngIf="faceSnap.location"><b>Photo prise à {{ faceSnap.location }}</b></span>
+        </div>
+        <div>
+            <button class="buttonSnaped" (click)="onSnap()" >{{ buttonText }}</button>
+            <span [ngStyle]="{color: 'rgb(0, ' + faceSnap.snaps + ' ,0)'}"> {{ faceSnap.snaps }} 🥰 </span>
+        </div>
+        <button class="button fill" routerLink="/facesnaps">Retour</button>
+    </section>
+</div>
+
+    
