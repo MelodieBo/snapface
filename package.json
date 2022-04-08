@@ -1,6 +1,7 @@
 {
   "name": "snapface",
   "version": "0.0.0",
+  "homepage": "https://melodiebo.github.io/snapface/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
